@@ -1,12 +1,13 @@
-import type React from "react"
 import "@/app/globals.css"
+import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
+import { Toaster } from "@/components/ui/toaster"
+import { AppProvider } from "@/context/app-provider"
+import { ThemeProvider } from "@/context/theme-provider"
+import { TranslationProvider } from "@/context/translation-provider"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { Toaster } from "@/components/ui/toaster"
-import { SiteHeader } from "@/components/site-header"
-import { AppProvider } from "@/context/app-provider"
-import { TranslationProvider } from "@/context/translation-provider"
-import { ThemeProvider } from "@/components/theme-provider"
+import type React from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -27,7 +28,8 @@ export default function RootLayout({
           <TranslationProvider>
             <AppProvider>
               <SiteHeader />
-              {children}
+              <main className="flex-1">{children}</main>
+              <SiteFooter />
               <Toaster />
             </AppProvider>
           </TranslationProvider>

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Github, Linkedin, Twitter } from "lucide-react"
 import { useTranslation } from "@/context/translation-provider"
 import { useToast } from "@/components/ui/use-toast"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function AboutPage() {
   const { t } = useTranslation()
@@ -69,6 +70,92 @@ export default function AboutPage() {
             <p className="text-gray-600 dark:text-gray-300 mt-4">{t("storyPart2")}</p>
           </CardContent>
         </Card>
+
+        {/* Terms and Conditions Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 text-center">{t("termsAndConditions")}</h2>
+          <Card>
+            <CardContent className="p-8">
+              <h3 className="text-xl font-semibold mb-4">{t("termsOfUse")}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">{t("termsOfUseDescription")}</p>
+
+              <h3 className="text-xl font-semibold mb-4 mt-8">{t("promoCodeRules")}</h3>
+              <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                <li>{t("promoCodeRule1")}</li>
+                <li>{t("promoCodeRule2")}</li>
+                <li>{t("promoCodeRule3")}</li>
+                <li>{t("promoCodeRule4")}</li>
+                <li>{t("promoCodeRule5")}</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold mb-4 mt-8">{t("userResponsibilities")}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">{t("userResponsibilitiesDescription")}</p>
+
+              <h3 className="text-xl font-semibold mb-4 mt-8">{t("disclaimers")}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{t("disclaimersDescription")}</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Privacy Policy Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 text-center">{t("privacyPolicy")}</h2>
+          <Card>
+            <CardContent className="p-8">
+              <h3 className="text-xl font-semibold mb-4">{t("informationWeCollect")}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">{t("informationWeCollectDescription")}</p>
+
+              <h3 className="text-xl font-semibold mb-4 mt-8">{t("howWeUseInformation")}</h3>
+              <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                <li>{t("informationUse1")}</li>
+                <li>{t("informationUse2")}</li>
+                <li>{t("informationUse3")}</li>
+                <li>{t("informationUse4")}</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold mb-4 mt-8">{t("dataSecurity")}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">{t("dataSecurityDescription")}</p>
+
+              <h3 className="text-xl font-semibold mb-4 mt-8">{t("cookiesPolicy")}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{t("cookiesPolicyDescription")}</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 text-center">{t("faq")}</h2>
+          <Card>
+            <CardContent className="p-8">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-left font-medium">{t("faqQuestion1")}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 dark:text-gray-300">{t("faqAnswer1")}</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-left font-medium">{t("faqQuestion2")}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 dark:text-gray-300">{t("faqAnswer2")}</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-left font-medium">{t("faqQuestion3")}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 dark:text-gray-300">{t("faqAnswer3")}</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4">
+                  <AccordionTrigger className="text-left font-medium">{t("faqQuestion4")}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 dark:text-gray-300">{t("faqAnswer4")}</AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5">
+                  <AccordionTrigger className="text-left font-medium">{t("faqQuestion5")}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 dark:text-gray-300">{t("faqAnswer5")}</AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </div>
 
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-6">{t("getInTouch")}</h2>
